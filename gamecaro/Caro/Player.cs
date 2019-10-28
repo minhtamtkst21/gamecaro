@@ -12,7 +12,8 @@ namespace Caro
         {
             Console.Write("Row: ");
             int row = int.Parse(Console.ReadLine());
-            Console.Write
+            Console.Write("Column: ");
+            int column = int.Parse(Console.ReadLine());
         }
     }
 }
