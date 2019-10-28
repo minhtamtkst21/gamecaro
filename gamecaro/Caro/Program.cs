@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Caro
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            Controller c = new Controller();
+            c.PlayGame();
         }
     }
 }
