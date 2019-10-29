@@ -8,20 +8,28 @@ namespace Caro
 {
     class Board
     {
-        public char[,] Arr;
+        public string[,] Arr;
         private int player=1;
+        private int i=0;
          public Board()
         {
-            this.Arr = new char[21, 21];
+            this.Arr = new string[20, 20];
         }
          public void PrintGame()
          {
-             for (int row = 0; row < 21; row++) //hang
+             for (i = 1; i <= 20; i++)
              {
-                 for (int column = 0; column < 21; column++) //cot
-                 {
-                     Console.Write(Arr[column, row]);
-                 }
+                 Console.Write(i);
+             }
+             Console.WriteLine();
+             for (int row = 0; row < 20; row++) //hang
+             {
+                 for (int column = 0; column < 20; column++) //cot
+                     {
+                         Console.Write(Arr[column, row] + " ");
+                     }
+
+                 Console.Write(i);
                  Console.WriteLine();
              }
          }
@@ -32,7 +40,7 @@ namespace Caro
              {
                  for (int row = 0; row < 15; row++) //cot
                  {
-                     if (Arr[row, column] == 'x' || Arr[row,column]=='o')
+                     if (Arr[row, column] == "x" || Arr[row,column]=="o")
                      {
                          for (int i = 1; i < 5; i++)
                          {
@@ -74,12 +82,12 @@ namespace Caro
          {
              if (player == 1)
              {
-                 Arr[column, row] = 'x';
+                 Arr[column, row] = "x";
                  player = 2;
              }
              else
              {
-                 Arr[column, row] = 'o';
+                 Arr[column, row] = "o";
                  player = 1;
              }
          }
