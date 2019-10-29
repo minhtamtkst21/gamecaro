@@ -12,15 +12,15 @@ namespace Caro
         private int player=1;
          public Board()
         {
-            this.Arr = new char[20, 20];
+            this.Arr = new char[21, 21];
         }
          public void PrintGame()
          {
-             for (int row = 0; row < 20; row++) //hang
+             for (int row = 0; row < 21; row++) //hang
              {
-                 for (int column = 0; column < 20; column++) //cot
+                 for (int column = 0; column < 21; column++) //cot
                  {
-                     Console.Write(Arr[column,row]+' ');
+                     Console.Write(Arr[column, row]);
                  }
                  Console.WriteLine();
              }
