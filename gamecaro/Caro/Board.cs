@@ -13,25 +13,40 @@ namespace Caro
         private int i=0;
          public Board()
         {
-            this.Arr = new string[20, 20];
+            this.Arr = new string[20,20];
         }
          public void PrintGame()
          {
-             for (i = 1; i <= 20; i++)
+             for (i = 0; i < 20; i++)
              {
-                 Console.Write(i);
+                 Arr[i, 0] = i + "";
+                 Arr[0, i] = i + "";
              }
-             Console.WriteLine();
-             for (int row = 0; row < 20; row++) //hang
-             {
-                 for (int column = 0; column < 20; column++) //cot
+                 for (int row = 0; row < 20; row++) //hang
+                 {
+                     for (int column = 0; column < 20; column++) //cot
                      {
-                         Console.Write(Arr[column, row] + " ");
+                         if (column == 0 || row == 0)
+                         {
+                             Console.Write(Arr[column, row] + " ");
+                         }
+                         else
+                             if (Arr[column, row] == "x" || Arr[column, row] == "o")
+                             {
+                                 Console.Write(Arr[column, row] + " ");
+                             }
+                         else
+                             if(column<10)
+                         {
+                             Console.Write("  ");
+                         }
+                             else
+                             {
+                                 Console.Write("   ");
+                             }
                      }
-
-                 Console.Write(i);
-                 Console.WriteLine();
-             }
+                     Console.WriteLine();
+                 }
          }
          public bool isGameOver()
          {
